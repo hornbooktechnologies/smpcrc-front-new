@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/common/Button";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -12,7 +13,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent z-10"></div>
         <img
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop"
+          src="/images/home_hero.webp"
           alt="SPMCRC Campus"
           className="w-full h-full object-cover scale-105 active:scale-100 transition-transform duration-1000"
         />
@@ -59,15 +60,16 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.6, type: "spring", stiffness: 100 }}
             className="flex flex-wrap gap-4"
           >
-            <Button
-              variant="primary"
-              size="lg"
-              className="px-10 py-5 rounded-2xl font-bold group shadow-[0_0_30px_rgba(1,121,191,0.3)] hover:shadow-[0_0_40px_rgba(1,121,191,0.5)] transition-all"
-              icon={<ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />}
-            >
-              Check Our Courses
-            </Button>
-
+            <Link href="/courses">
+              <Button
+                variant="primary"
+                size="lg"
+                className="px-10 py-5 rounded-2xl font-bold group shadow-[0_0_30px_rgba(1,121,191,0.3)] hover:shadow-[0_0_40px_rgba(1,121,191,0.5)] transition-all"
+                icon={<ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />}
+              >
+                Check Our Courses
+              </Button>
+            </Link>
             {/* <button className="px-10 py-5 border-2 border-white/20 hover:border-white/40 bg-white/5 backdrop-blur-md rounded-2xl font-bold transition-all">
               Learn More
             </button> */}

@@ -20,11 +20,15 @@ export function TrustInfo() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", delay: 0.2 }}
-            className="inline-flex items-center justify-center p-6 rounded-[2rem] bg-slate-50 border border-slate-100 mb-10 shadow-sm"
+            className="inline-flex items-center justify-center p-6 rounded-[2rem] bg-slate-50 mb-10"
           >
-            <Handshake size={48} className="text-[#0179bf]" />
+            <img
+              src="/images/dimondassociation.png"
+              alt="Medical Education"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +38,7 @@ export function TrustInfo() {
           >
             Ahmedabad Diamond Association Medical Trust
           </motion.h2>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -51,11 +55,11 @@ export function TrustInfo() {
 
           {/* Decorative divider */}
           <motion.div
-             initial={{ width: 0 }}
-             whileInView={{ width: 100 }}
-             viewport={{ once: true }}
-             transition={{ delay: 0.6, duration: 0.8 }}
-             className="h-1 bg-primary/20 mx-auto mt-12 rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: 100 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="h-1 bg-primary/20 mx-auto mt-12 rounded-full"
           />
         </motion.div>
       </div>
