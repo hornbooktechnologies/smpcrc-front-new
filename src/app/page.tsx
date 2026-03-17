@@ -1,5 +1,3 @@
-"use client";
-
 import { Hero } from "@/components/layout/Hero";
 import { About } from "@/components/layout/About";
 import { Programs } from "@/components/layout/Programs";
@@ -8,6 +6,16 @@ import { AdmissionsSteps } from "@/components/layout/AdmissionsSteps";
 import { AdmissionsInfo } from "@/components/layout/AdmissionsInfo";
 import { Vision } from "@/components/layout/Vision";
 import { TrustInfo } from "@/components/layout/TrustInfo";
+import { getPageMetadata } from "@/utils/metadata";
+
+export async function generateMetadata() {
+  const meta = await getPageMetadata('home');
+  return {
+    title: meta?.title || 'SPMC | Sardar Patel Medical College & Research Center',
+    description: meta?.description || 'Excellence in healthcare education since 1955.',
+    keywords: meta?.keywords,
+  };
+}
 
 export default function Home() {
   return (

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/common/Button";
 
 export const About = () => {
@@ -32,9 +33,11 @@ export const About = () => {
               nurture responsible healthcare professionals who are ready to
               serve communities and improve lives through quality medical care.
             </p>
-            <Button variant="primary" size="lg" className="w-fit mt-4">
-              Find out more
-            </Button>
+            <Link href="/about">
+              <Button variant="primary" size="lg" className="w-fit mt-4">
+                Find out more
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
