@@ -6,14 +6,12 @@ import {
   Compass,
   FileText,
   ArrowRight,
-  ExternalLink,
-  Calendar as CalendarIcon,
   X,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
 import Image from "next/image";
-import { galleryImages, recentHighlights } from "@/data/gallery";
+import { galleryImages } from "@/data/gallery";
 import GalleryCard from "@/components/ui/GalleryCard";
 
 export default function GalleryPage() {
@@ -92,7 +90,7 @@ export default function GalleryPage() {
                 transition={{ delay: 0.2 }}
                 className="text-slate-200 text-lg md:text-xl font-medium mb-8"
               >
-                Take a visual journey through Sardar Patel Medical College & Research Center's world-class facilities.
+                Take a visual journey through Sardar Patel Medical College &amp; Research Center&apos;s world-class facilities.
               </motion.p>
               {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}

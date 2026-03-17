@@ -23,7 +23,7 @@ export const About = () => {
               About Sardar Patel Medical College & Research Center
             </h2>
             <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
-              Building tomorrow's healthcare leaders
+              Building tomorrow&apos;s healthcare leaders
             </h3>
             <p className="text-slate-600 text-lg leading-relaxed">
               At Sardar Patel Medical College & Research Center, we provide a

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -123,7 +122,7 @@ export function Navbar() {
                 icon={<span className="material-symbols-outlined text-sm">call</span>}
                 className="w-full justify-center"
               >
-                +91-XXXXXXXXXX
+                +91-9081266625
               </Button>
             </div>
           </motion.div>
