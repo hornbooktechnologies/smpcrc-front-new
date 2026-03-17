@@ -9,7 +9,7 @@ export async function generateMetadata() {
 			'Excellence in Healthcare Education | Sardar Patel Medical College & Research Center',
 		description:
 			meta?.description ||
-			'Dedicated to nurturing the next generation of medical professionals since 1955.',
+			'Dedicated to nurturing the next generation of medical professionals ',
 		keywords: meta?.keywords,
 	};
 }

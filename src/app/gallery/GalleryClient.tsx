@@ -183,20 +183,13 @@ export default function GalleryClient() {
 						</div>
 						<div className='absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent'></div>
 						<div className='relative z-10 max-w-2xl'>
-							<motion.span
-								initial={{ opacity: 0, y: 10 }}
-								animate={{ opacity: 1, y: 0 }}
-								className='inline-block px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary font-bold text-xs uppercase tracking-widest mb-4 backdrop-blur-sm'
-							>
-								Our Infrastructure
-							</motion.span>
 							<motion.h1
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ delay: 0.1 }}
 								className='text-4xl md:text-6xl font-black text-white mb-6 leading-tight'
 							>
-								Campus Gallery
+								Gallery
 							</motion.h1>
 							<motion.p
 								initial={{ opacity: 0, y: 20 }}
@@ -205,7 +198,7 @@ export default function GalleryClient() {
 								className='text-slate-200 text-lg md:text-xl font-medium mb-8'
 							>
 								Take a visual journey through Sardar Patel Medical College &amp;
-								Research Center&apos;s world-class facilities.
+								Research Center.
 							</motion.p>
 						</div>
 					</div>
