@@ -50,9 +50,9 @@ export function Vision() {
             <div className="relative group">
               {/* Stylish background blob */}
               <div className="absolute inset-0 bg-primary/5 rounded-[3rem] transform rotate-3 scale-105 group-hover:rotate-1 transition-transform duration-700" />
-              <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/5">
+              <div className="relative z-10 rounded-[2.5rem] overflow-hidden">
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvXIh5Wp89O-t7pNKkv3gcG6UVtTBWmunYf0OpM-yu9jygwpWz1NK95C-DoPIf0z2NZdltr4-npwMsvl43FBG0b28f-I654nABgdyBB2Ve8F4mJoG5fRSTyiYETvpzzrcxloKKSMIussKrNdhSdpOztwB4swXbBH0vHEYT_hhy-FMAjPFsoKwj84IVX_E0j4ficbYDH4zX35YsqjJYAp8eC3DIqaKZnFkOYBjz3MIGURaJwjoRbeRFR7WXqFs8c4Oy5VYmns_wo2E"
+                  src="/images/sardar_patel.webp"
                   alt="Medical Vision"
                   className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
                 />
