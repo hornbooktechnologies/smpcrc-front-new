@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/common/Button";
 
 export const About = () => {
@@ -14,7 +15,7 @@ export const About = () => {
               <img
                 alt="About SPMCRC"
                 className="w-full h-auto object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBadPuQNNodEkvicOmxLdv3X76bBwrfZszCkB06S9Ti5aids_niMU82hEv8zrQkwAFxOj5KlisvWa3BziU0UgaVHQW2uxm7iSRZHJ2MNtYTgWFLQV8HS_uByjqbfzKvrKt-QeGZuzTXkilCeveH9w55_F_P4Vv5SM-UbwrMsBNMTwDZFVx7rHQkJA2tMY82N5zhSAdVIodoNAdIVCT4wbfUeLjhDIcXspnr2ItSuuXszkFxYWgyFIPH1NMDqSfT37fDUkWff9n6Rno"
+                src="/images/home_about.webp"
               />
             </div>
           </div>
@@ -32,9 +33,11 @@ export const About = () => {
               nurture responsible healthcare professionals who are ready to
               serve communities and improve lives through quality medical care.
             </p>
-            <Button variant="primary" size="lg" className="w-fit mt-4">
-              Find out more
-            </Button>
+            <Link href="/about">
+              <Button variant="primary" size="lg" className="w-fit mt-4">
+                Find out more
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -99,12 +99,12 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-slate-500 text-xs">
-            © {currentYear} Sardar Patel Medical College & Research Center is Proudly Owned by Kothiya
+            © {currentYear} Sardar Patel Medical College & Research Center is Proudly Owned by Kothiya Hospital
           </p>
-          <div className="flex gap-8 text-[10px] uppercase tracking-widest font-bold text-slate-500">
+          {/* <div className="flex gap-8 text-[10px] uppercase tracking-widest font-bold text-slate-500">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

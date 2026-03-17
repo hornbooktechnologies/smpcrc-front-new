@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/common/Button";
+import Link from "next/link";
 
 export function AdmissionsInfo() {
   return (
@@ -17,7 +18,7 @@ export function AdmissionsInfo() {
         >
           <div className="lg:w-1/2 relative overflow-hidden group">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0XyKLzXJoaL1qIRVkaCe5qZ1HtUMel58aIVWh9zjDMmnxX-xQSyOZQNH9a_KIQlMTPHnASvFgEboJ1J8BDKjzrs6Wdeaf_ktF9thUXyu0p1E2pb-pfauory7VNDHO2SXwOpBf7oUsayGSAzQLIQpzk-jUwnCHZQwVhfmuF5GWS65jh-tzxdp-Gant1yXd1dkOOYpRH7bQsQTZeDe0ojZR0aPkKJZvFpC_oaeNfSXv4-p5EnOFofaeG4zfQ3eFd-TBAwd18g3KGDk"
+              src="/images/start_journey.png"
               alt="Medical Education"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -58,13 +59,15 @@ export function AdmissionsInfo() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-2xl border-2 hover:shadow-xl hover:shadow-primary/10 transition-all font-black uppercase tracking-wider"
-              >
-                Overview
-              </Button>
+              <Link href="/courses">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-2xl border-2 hover:shadow-xl hover:shadow-primary/10 transition-all font-black uppercase tracking-wider"
+                >
+                  Overview
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>

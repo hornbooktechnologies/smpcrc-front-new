@@ -52,7 +52,7 @@ export function LearningCulture() {
             clinical exposure.
           </motion.p>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 border-t border-white/20 pt-12">
+          {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 border-t border-white/20 pt-12">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -69,7 +69,7 @@ export function LearningCulture() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
