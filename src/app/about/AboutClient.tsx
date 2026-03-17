@@ -249,7 +249,7 @@ export default function AboutClient() {
 				<div className='max-w-7xl mx-auto px-4 md:px-10'>
 					<div className='text-center mb-16'>
 						<span className='text-[#0179bf] font-bold tracking-[0.2em] uppercase text-sm block mb-4'>
-							Leadership
+							Trustees
 						</span>
 						<h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 font-display'>
 							The Visionaries Behind Our Success
