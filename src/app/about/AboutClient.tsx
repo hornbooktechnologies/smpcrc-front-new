@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -14,37 +14,14 @@ import {
 	Activity,
 	Globe,
 } from 'lucide-react';
+import { getTrustees } from '@/services/api';
 
-const leadership = [
-	{
-		name: 'Dr. Rajesh Patel',
-		role: 'Dean & Principal',
-		qualification: 'MD, PhD in Cardiology',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuAochR4gy-lqYaZxeesFjZ4buvwlhCeYr6p3CspjPkVKoY4GmQR8eiWwtTeZ4qNJIms_BwT_ryLGqikpi3XtPI52k2_ieSXGZsVWxm4wEr31-ffqjRNTBG3q7k-I9r7cXZG1wiC3oLEoOUUSRS0BlUHdJ5QNH_x0upWx4OcmF4usJc1eDsyI6AcQ_0z_6SGPdfvjnGZr6FhcuYU9aKePyngWpbLCaQH43xtnS_4ifoDWBd5G3Aw3_pqorwUlHNnvM4wjd7AqDaAH4k',
-	},
-	{
-		name: 'Mrs. Sunita Verma',
-		role: 'Chairperson of Trust',
-		qualification: 'Philanthropist & Educator',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuBiakeGpGtew1uEidG2wfciOFe3AuWZbMHu28_Pv-hTWJ3cRVh47hJCXxlvLWQ0wXB8-wzOD2M-mkIoZrW_Vjh8pqODFtL6t3gRKC2Fj7vcAlXf4QJ-FLj1QtC9pLStbvVc4XX1aninupHyjjWmTgb719U7QqlPlmvCNrgzR8ZWS_gr3SXKlaCDs5fUMe59uuU-PFWddq_GsUOtqQWxojBQXQTbNp88D6FwOeqCOtQOKEC56-kP_l_OBeUPLt7EtiQ8McR8LJ9fNm4',
-	},
-	{
-		name: 'Mr. Anil Khanna',
-		role: 'Executive Trustee',
-		qualification: 'B.Tech, MBA (IIM-A)',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuAjOmYu_GeIgqlcWhT6WEdvwy6Zvr6-Ocri6xgAtTrf5ycDwVCsiP4OZCa7gEb1b4VBzggLl40VP4OdYJYjAFVBNi5kn6CPbtERfRgkP8bH1P42Fa7QgXef4b-hiHLOKtlKt64k4jCAgh9uK-UebVfHeZuZy5tj2W4QU45D8Z0k_wwRl2YavGYqic8gQV6bgbFZN9033TxueB3562gp7UtDNWv8O5Glm03FKgSJ4tzpvSOKtT3ofXk1jGs4lQwbLThblDe5Ad8VJKw',
-	},
-	{
-		name: 'Dr. Meera Joshi',
-		role: 'Medical Superintendent',
-		qualification: 'MS, MCh Neurosurgery',
-		image:
-			'https://lh3.googleusercontent.com/aida-public/AB6AXuC7XESp9biExr5JVbreEFyyTNLdvO0IJmBA2McDAQpjB72_z1mgH6Kv8lZkqI6MYdjvi5YXgxkixyb-VGQyG0qJcQQUSv5gMZMItVk8Emu0PHweL5BqZSlNn8oULah4iIVrCg4c6iKoBALibnpuCw0g3rlgd5mGUR43xnXUI2MNsbCDUcquugn_W53_oujaLpZiaC2Ct_rL0K8EhhFmSMRvIy7VnbKfRB_gTG0GMOsNOwtuPIHthuT9By3YSrZZ2avRE-7Pyf6yNkM',
-	},
-];
+interface Trustee {
+	name: string;
+	role: string;
+	qualification: string;
+	image: string;
+}
 
 const credentials = [
 	{ icon: BadgeCheck, label: 'NMC Approved' },
@@ -69,6 +46,46 @@ const stagger = {
 };
 
 export default function AboutClient() {
+	const [trustees, setTrustees] = useState<Trustee[]>([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const fetchTrustees = async () => {
+			try {
+				setLoading(true);
+				const response = await getTrustees(1, 10);
+
+				let rawItems = [];
+				if (response?.data) {
+					if (Array.isArray(response.data)) {
+						rawItems = response.data;
+					} else if (Array.isArray(response.data.trusty)) {
+						rawItems = response.data.trusty;
+					} else if (Array.isArray(response.data.items)) {
+						rawItems = response.data.items;
+					}
+				} else if (Array.isArray(response)) {
+					rawItems = response;
+				}
+
+				const mapped: Trustee[] = rawItems.map((item: any) => ({
+					name: item.name || 'Anonymous Trustee',
+					role: item.designation || item.role || 'Member of Trust',
+					qualification: item.qualification || '',
+					image: item.profile_image || item.image,
+				}));
+
+				setTrustees(mapped);
+			} catch (err) {
+				console.error('Error fetching trustees:', err);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchTrustees();
+	}, []);
+
 	return (
 		<div className='flex flex-col w-full'>
 			{/* Hero Section */}
@@ -232,47 +249,53 @@ export default function AboutClient() {
 				<div className='max-w-7xl mx-auto px-4 md:px-10'>
 					<div className='text-center mb-16'>
 						<span className='text-[#0179bf] font-bold tracking-[0.2em] uppercase text-sm block mb-4'>
-							Leadership
+							Trustees
 						</span>
 						<h2 className='text-3xl md:text-5xl font-extrabold text-slate-900 font-display'>
 							The Visionaries Behind Our Success
 						</h2>
 					</div>
 
-					<motion.div
-						variants={stagger}
-						initial='initial'
-						whileInView='animate'
-						viewport={{ once: true }}
-						className='grid sm:grid-cols-2 lg:grid-cols-4 gap-10'
-					>
-						{leadership.map((member, index) => (
-							<motion.div
-								key={index}
-								variants={fadeInUp}
-								className='group text-center'
-							>
-								<div className='aspect-square rounded-3xl overflow-hidden mb-8 relative border border-slate-100'>
-									<Image
-										src={member.image}
-										alt={member.name}
-										fill
-										className='object-cover group-hover:scale-110 transition-transform duration-700'
-									/>
-									<div className='absolute inset-0 bg-[#0179bf]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-								</div>
-								<h4 className='text-2xl font-bold text-slate-900 mb-1'>
-									{member.name}
-								</h4>
-								<p className='text-[#0179bf] font-bold text-sm mb-2'>
-									{member.role}
-								</p>
-								<p className='text-slate-500 text-sm italic'>
-									{member.qualification}
-								</p>
-							</motion.div>
-						))}
-					</motion.div>
+					{loading ? (
+						<div className='flex justify-center items-center py-20'>
+							<div className='animate-spin rounded-full h-12 w-12 border-b-2 border-[#0179bf]'></div>
+						</div>
+					) : (
+						<motion.div
+							variants={stagger}
+							initial='initial'
+							whileInView='animate'
+							viewport={{ once: true }}
+							className='grid sm:grid-cols-2 lg:grid-cols-4 gap-10'
+						>
+							{trustees.map((member, index) => (
+								<motion.div
+									key={index}
+									variants={fadeInUp}
+									className='group text-center'
+								>
+									<div className='aspect-square rounded-3xl overflow-hidden mb-8 relative border border-slate-100'>
+										<Image
+											src={member.image}
+											alt={member.name}
+											fill
+											className='object-cover group-hover:scale-110 transition-transform duration-700'
+										/>
+										<div className='absolute inset-0 bg-[#0179bf]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+									</div>
+									<h4 className='text-2xl font-bold text-slate-900 mb-1'>
+										{member.name}
+									</h4>
+									<p className='text-[#0179bf] font-bold text-sm mb-2'>
+										{member.role}
+									</p>
+									<p className='text-slate-500 text-sm italic'>
+										{member.qualification}
+									</p>
+								</motion.div>
+							))}
+						</motion.div>
+					)}
 				</div>
 			</section>
 

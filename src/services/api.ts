@@ -21,6 +21,10 @@ export const getProfessors = async (page = 1, limit = 10) => {
   return fetcher(`/professors?page=${page}&limit=${limit}`);
 };
 
+export const getTrustees = async (page = 1, limit = 10) => {
+  return fetcher(`/trusty?page=${page}&limit=${limit}`);
+};
+
 export const getCourses = async (page = 1, limit = 10) => {
   return fetcher(`/courses?page=${page}&limit=${limit}`);
 };
