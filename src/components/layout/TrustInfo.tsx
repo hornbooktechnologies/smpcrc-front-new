@@ -29,16 +29,6 @@ export function TrustInfo() {
 						/>
 					</motion.div>
 
-					<motion.h2
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ delay: 0.3 }}
-						className='text-3xl md:text-5xl font-black text-slate-900 mb-10 tracking-tight'
-					>
-						Ahmedabad Diamond Association Medical Trust
-					</motion.h2>
-
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
