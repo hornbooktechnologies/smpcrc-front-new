@@ -192,7 +192,7 @@ export default function ContactUsPage() {
                   className="grayscale hover:grayscale-0 transition-all duration-500"
                 ></iframe>
               </div>
-              <motion.div
+              {/* <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="rounded-2xl bg-primary/5 p-6 border border-primary/10 transition-transform"
               >
@@ -203,7 +203,7 @@ export default function ContactUsPage() {
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Our campus is open for visitors between 9:00 AM and 5:00 PM. For emergency medical services, the trauma center and emergency ward are open 24/7. Please carry a valid ID when visiting the administrative block.
                 </p>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </section>

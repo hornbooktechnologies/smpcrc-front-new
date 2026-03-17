@@ -4,15 +4,15 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
-  Target, 
-  Eye, 
-  BadgeCheck, 
-  GraduationCap, 
-  ShieldCheck, 
-  Activity, 
-  Globe 
+import {
+  ArrowRight,
+  Target,
+  Eye,
+  BadgeCheck,
+  GraduationCap,
+  ShieldCheck,
+  Activity,
+  Globe
 } from "lucide-react";
 
 const leadership = [
@@ -71,7 +71,7 @@ export default function AboutPage() {
       <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#0179bf]/80 mix-blend-multiply z-10"></div>
-          <Image 
+          <Image
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6f70nfEpaIGn2fDs8TiGFNx_gnTVs_bZlDL0xXosKcacgN0xbZitrdfTy5SVEfZAyqVRkyg6fxJBUT39ui3s_PquqsICgwPxSPoC60c7Jpsislabv20VmN4QHRTpp6x-KPdg4doQs7fcQbbBbx0GYoCIIbF8P_CxQ2yglh1-v1_zb4CkNdh0fdqyUthd01tu3TgV6JnXOliHOklg0BTntgqHj3G_KZkPKtWi8hzTFkQUYH7MtUxkAqfqME2T18Mm_zQxBY0Lrp8o"
             alt="Campus"
             fill
@@ -79,9 +79,9 @@ export default function AboutPage() {
             priority
           />
         </div>
-        
+
         <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-10 text-center text-white">
-          <motion.nav 
+          <motion.nav
             {...fadeInUp}
             className="flex items-center justify-center gap-2 mb-6 text-white/80 text-sm font-medium"
           >
@@ -89,8 +89,8 @@ export default function AboutPage() {
             <span className="material-symbols-outlined text-xs">chevron_right</span>
             <span className="text-white">About</span>
           </motion.nav>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -98,14 +98,14 @@ export default function AboutPage() {
           >
             Excellence in Healthcare Education
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed"
           >
-            Dedicated to nurturing the next generation of medical professionals since 1955.
+            Dedicated to nurturing the next generation of medical professionals
           </motion.p>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -122,21 +122,21 @@ export default function AboutPage() {
               className="relative"
             >
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3NIZhqHfW0xNY4txawUCEJvosAQO6jL77CQcLhStjkYWkuqj1WrPs0U7rsY4lepqvbLKJ_Fj1FdspKTbya6u0qxvhMxwPUOe6UkTBtQ_BK29MR7ka7c0D0AKh9WW1wS7uC8heaPWcqlMHsltsn6N1lwr6Dw7dIe3IGvLmhlZTQIdhvEMJ9bHcDIs7MiUolZN1M2ekP6bvn2PxAkd2LU8HP6JU_mB6xq_4abJ_P8DBMVgQjaibfpAygxxmol7iQt5lxkqEY8JBd50"
+                <Image
+                  src="/images/about_us.webp"
                   alt="History"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 bg-[#0179bf] text-white p-10 rounded-3xl hidden lg:block shadow-xl">
+              {/* <div className="absolute -bottom-8 -right-8 bg-[#0179bf] text-white p-10 rounded-3xl hidden lg:block shadow-xl">
                 <p className="text-5xl font-black">65+</p>
                 <p className="text-sm font-bold opacity-85 uppercase tracking-widest mt-2">Years of Legacy</p>
-              </div>
+              </div> */}
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -163,7 +163,7 @@ export default function AboutPage() {
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="grid md:grid-cols-2 gap-10">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -178,7 +178,7 @@ export default function AboutPage() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -205,7 +205,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display">The Visionaries Behind Our Success</h2>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -215,7 +215,7 @@ export default function AboutPage() {
             {leadership.map((member, index) => (
               <motion.div key={index} variants={fadeInUp} className="group text-center">
                 <div className="aspect-square rounded-3xl overflow-hidden mb-8 relative border border-slate-100">
-                  <Image 
+                  <Image
                     src={member.image}
                     alt={member.name}
                     fill
@@ -241,13 +241,9 @@ export default function AboutPage() {
               <span className="text-[#0179bf] font-bold tracking-[0.2em] uppercase text-sm block mb-4">Our Credentials</span>
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 font-display">Recognized for Excellence</h2>
             </div>
-            <Link href="#" className="text-[#0179bf] font-bold flex items-center gap-2 group decoration-2 hover:underline">
-              View All Certificates
-              <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={stagger}
             initial="initial"
             whileInView="animate"
@@ -255,8 +251,8 @@ export default function AboutPage() {
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
           >
             {credentials.map((item, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 variants={fadeInUp}
                 whileHover={{ y: -8 }}
                 className="bg-white p-10 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-xl hover:shadow-[#0179bf]/5"
