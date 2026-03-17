@@ -82,7 +82,7 @@ export default function GalleryPage() {
                 transition={{ delay: 0.1 }}
                 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight"
               >
-                Campus Gallery
+                Gallery
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
